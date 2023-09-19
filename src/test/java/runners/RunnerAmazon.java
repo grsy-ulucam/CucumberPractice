@@ -6,9 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/02_SeleniumTasks.feature"},
-        glue = {"stepdefinitions"}
+        features = "src/test/resources/features/06_ScenarioOutlineExamples.feature",
+        glue = "stepdefinitions",
+        dryRun = false
 )
 
-public class RunnerBackground {
+
+public class RunnerAmazon {
 }

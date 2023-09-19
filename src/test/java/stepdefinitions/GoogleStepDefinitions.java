@@ -80,4 +80,17 @@ public class GoogleStepDefinitions {
         Assert.assertTrue(Driver.getDriver().getTitle().contains("selenium"));
         Driver.closeDriver();
     }
+
+    @When("User search {string} on google page")
+    public void userSearchOnGooglePage(String key) {
+        GoogleSearchPage sp = new GoogleSearchPage(Driver.getDriver());
+        sp.searchFor(key);
+    }
+
+    @Then("User verify {string} result")
+    public void userVerifyResult(String key) throws InterruptedException {
+        Thread.sleep(5000);
+        Assert.assertTrue(Driver.getDriver().getTitle().contains(key));
+        Driver.closeDriver();
+    }
 }

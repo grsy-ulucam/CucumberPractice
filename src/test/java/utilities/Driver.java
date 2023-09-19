@@ -1,7 +1,7 @@
 package utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
@@ -17,8 +17,11 @@ public class Driver {
             String browser = ConfigReader.getProperty("browser");
             switch (browser){
 
+                case "chrome":
+                    driver = new ChromeDriver();
+                    break;
+
                 case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     break;
 
